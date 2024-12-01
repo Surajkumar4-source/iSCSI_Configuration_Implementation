@@ -339,7 +339,7 @@ ls -lh
 
 ## Conclusion
 
-*With the above implementation, you have successfully configured an iSCSI server and client. we also verified disk access by creating a file on the mounted iSCSI disk and ensured that the data persists across reboots. Now, the client can access storage from the server as if it were a locally connected disk.*
+*With the above implementation, we have successfully configured an iSCSI server and client. we also verified disk access by creating a file on the mounted iSCSI disk and ensured that the data persists across reboots. Now, the client can access storage from the server as if it were a locally connected disk.*
 
 <br>
 <br>
