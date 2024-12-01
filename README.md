@@ -25,14 +25,14 @@
 
 ## Prerequisites
 
-### 1.Server Machine Requirements:
+### 1. Server Machine Requirements:
 
  -  A Linux-based system (Debian 12 or CentOS 7 VMs recommended).
    
  -  At least one or more additional disks for storage.
 
 
-### Client Machine Requirements:
+### 2. Client Machine Requirements:
 
   - A Linux-based system (Debian 12 or CentOS 7 VMs recommended). with the open- 
     iscsi or iscsi-initiator-utils package 
