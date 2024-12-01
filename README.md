@@ -23,6 +23,91 @@
 -  High Availability: Can be configured for redundancy and fault tolerance.
    Prerequisites
 
+
+
+<br>
+<br>
+
+*Both NFS (Network File System) and iSCSI (Internet Small Computer System Interface) are technologies used to share disk storage over a network, but they differ significantly in how they work and the use cases for which they are best suited.*
+
+
+<br>
+
+# Key Differences Between NFS vs iSCSI
+
+| Feature         | NFS (Network File System)                        | iSCSI (Internet SCSI)                              |
+|-----------------|--------------------------------------------------|----------------------------------------------------|
+| **Protocol Type**| File-based protocol.                            | Block-based protocol.                             |
+| **Data Access**  | Provides access to files as a network file system. | Provides access to raw disk blocks, which can be used for any filesystem. |
+| **Usage**        | Primarily used for file sharing across networks (e.g., /home directories). | Used for sharing block-level storage (like hard drives) across a network. |
+| **Granularity**  | Operates at the file level, allowing clients to access specific files and directories. | Operates at the block level, allowing clients to access entire disks or partitions. |
+| **Performance**  | Generally slower than iSCSI due to file-level access and additional protocol overhead. | Generally faster than NFS because it allows direct access to blocks and bypasses file system overhead. |
+| **Flexibility**  | File systems on the server handle storage allocation, and the client accesses files via the NFS protocol. | The client has full control over the filesystem; it can format and partition the disk as needed. |
+| **Complexity**   | Easier to configure and manage, ideal for sharing files across machines. | More complex to set up, but offers greater control over storage and filesystem. |
+| **Authentication**| Can use NFSv4 with Kerberos for secure access.  | Uses iSCSI initiator and target authentication via IQNs and CHAP (Challenge Handshake Authentication Protocol). |
+| **Use Cases**    | Best for sharing files in environments where users and applications need to access files over a network. | Best for environments where applications need access to raw block storage (e.g., virtual machines, databases). |
+
+
+
+<br>
+
+
+## When to Use NFS
+
+- **File sharing**: NFS is ideal for sharing files across a network, allowing clients to mount remote directories as local filesystems.
+- **Cross-platform compatibility**: Works well for Linux/Unix-based systems, with NFSv4 offering improved security and support for Linux, macOS, and more.
+- **Easy to configure**: Simple to configure and maintain, making it perfect for sharing directories or file systems.
+
+### Use Cases for NFS:
+- **Home directories**: Sharing user directories across multiple machines.
+- **Shared storage for applications**: File-based storage for applications that don't require block-level access (e.g., web servers).
+- **Network-mounted storage**: Storing personal or work files over the network.
+
+
+
+<br>
+
+
+
+## When to Use iSCSI
+
+- **Block-level storage**: iSCSI provides clients with raw storage access, making it ideal for applications that need to format and use a filesystem (e.g., virtual machines, databases).
+- **High-performance storage**: Offers better performance by allowing direct access to block storage without file-level protocol overhead.
+- **SAN (Storage Area Network)**: Commonly used to create a SAN for high-performance, block-level storage over a network.
+
+### Use Cases for iSCSI:
+- **Virtualization**: Shared storage in virtualized environments (e.g., VMware, Hyper-V) for VMs needing raw block-level storage.
+- **Database storage**: Low-latency, high-performance storage for databases.
+- **Dedicated storage**: Ideal for applications requiring dedicated storage, such as creating virtual disks in hypervisors or storage for high-performance applications.
+
+## Summary of Key Differences
+
+- **NFS**: Provides file-level access and is better suited for general file sharing, offering easier setup and configuration.
+- **iSCSI**: Provides block-level access, ideal for applications needing raw disk space (e.g., virtual machines, databases), offering better performance and more control but with a more complex setup.
+
+### In Conclusion:
+- Choose **NFS** if you need to share files or directories over a network.
+- Choose **iSCSI** if you need block-level storage for applications like databases or virtualization.
+
+
+
+
+
+<br>
+<br>
+
+
+
+<br>
+<br>
+
+
+
+
+# Implementation Steps for iSCSI
+
+<br>
+
 ## Prerequisites
 
 ### 1. Server Machine Requirements:
