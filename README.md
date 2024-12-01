@@ -208,7 +208,7 @@ exit
 ```
 
   - *cd backstores/block: Navigates to the block storage section in targetcli.*
-  - *create block1 /dev/mapper/vg_iscsi-lv_iscsi--disk--01: Creates a block storage        backend called block1 using the logical volume created earlier.*
+  - *create block1 /dev/mapper/vg_iscsi-lv_iscsi--disk--01: Creates a block storage backend called block1 using the logical volume created earlier.*
 
 
   - *cd ../../iscsi: Moves to the iSCSI target configuration section.*
@@ -217,6 +217,15 @@ exit
 
   - *create iqn.1993-08.org.debian:01:84104998b5d: Creates an access control list   
     (ACL) entry for the initiator, allowing access from the specified IQN.*
+
+<br>
+
+*The IQN follows the format iqn.<year>-<month>.<organization>:<unique_identifier>.*
+
+*You can customize this identifier to reflect the server or organization’s name as needed.(It should be anything but unique )*
+
+    
+<br>
 
   - *create /backstores/block/block1: Associates the block storage backend (block1) 
     with the target.*
